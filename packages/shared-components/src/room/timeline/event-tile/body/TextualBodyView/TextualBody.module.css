@@ -41,6 +41,11 @@
     display: flex;
 }
 
+/* Let the body shrink so wide content such as code blocks scrolls instead of pushing the tile wider. */
+.annotated > * {
+    min-width: 0;
+}
+
 .annotatedInline {
     display: inline-flex;
 }

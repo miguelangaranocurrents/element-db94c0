@@ -89,10 +89,12 @@ export function EditMessageComposerWrapper(props: IEditMessageComposerProps): JS
         />
     );
 
+    // Not wrapped in a <div>: the body slot clips its direct children, which would also clip the
+    // autocomplete rendered above the editor. The editor's own overflow styles need to apply to it directly.
     return (
-        <div>
+        <>
             <MessageComposerUrlPreviewWrapper urlPreviewVm={vm} />
             {editor}
-        </div>
+        </>
     );
 }
